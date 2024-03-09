@@ -221,7 +221,7 @@ transition: all .5s;
 
 /* HERO SECTION */
 .hero{
-  background: url(/MASTERWORK/images/scandinavian-interior-mockup-wall-decal-background\ 1.png)no-repeat center center/cover;
+  background: url(/furniro//images/scandinavian-interior-mockup-wall-decal-background\ 1.png)no-repeat center center/cover;
   width: 100%;
   height: 650px;
   display: flex;
@@ -1034,6 +1034,9 @@ width: clamp(20px,15vw,200px);
 /* THIS IS WEHERE THE DISPLAY FOR MOBILE STARTS */
 
 @media (max-width: 820px) {
+
+
+
   .hero-cta{
     justify-content: center;
     align-items: center;
@@ -1047,9 +1050,6 @@ width: clamp(20px,15vw,200px);
    .head-content .quick-nav ul{
     font-size: 12px;
    }
-
-
-
 
 
 
@@ -1097,6 +1097,21 @@ font-size: 1.5rem;
 .head-content .logo{
 transform: translateY(-20px);
 }
+
+
+.nav-links ul li a::before{
+display: none;
+  }
+
+.nav-links ul li a:active{
+
+  background: var(--dark-gold);
+  padding: 10px;
+  color: var(--primary-bg);
+  scale: 1.2;
+
+}
+  
 
 
 /* MENU BUTTON  JAVASCRIPT*/

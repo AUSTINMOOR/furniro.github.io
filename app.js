@@ -39,7 +39,48 @@ document.addEventListener('scroll', ()=>{
 
 
 
-// BEAUTIFUL 
+// BEAUTIFUL INSPIRATION SECTION
+
+const activateScroll = ()=>{
+  const imageList = document.querySelector('.image-list');
+  const nextPrevButtons = document.querySelectorAll('.scroll-btn');
+
+  const radioButtons = document.querySelectorAll('#radio-btn');
+
+  // get next and prev buttons 
+  nextPrevButtons.forEach((button)=>{
+button.addEventListener('click', ()=>{
+  const buttonDirection = button.id === 'prev-btn'? -1: 1;
+const imageDirection = buttonDirection* imageList.clientWidth;
+imageList.scrollBy({left: imageDirection, behavior: 'smooth'});
+})
+})
+// front and back buttons ended
+
+radioButtons.forEach((button)=>{
+button.addEventListener('click', (event)=>{
+let buttonDirection;
+
+
+switch (button.className) {
+  case 'first-btn':
+    buttonDirection = -1;
+    break;
+  default:
+    buttonDirection = 1;
+}
+
+
+const imageDirection = buttonDirection * imageList.clientWidth
+
+console.log(imageDirection)
+imageList.scrollBy({left: imageDirection, behavior: 'smooth'});
+})
+})
+
+}
+
+activateScroll();
 
 
 
