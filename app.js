@@ -24,10 +24,32 @@ document.addEventListener('scroll', ()=>{
 
     menu.style.background ='white'
     menu.style.boxShadow = 'none'
-    // menu.style.display = 'block'
+
 
   }
 })
+
+
+// QUICK NAV SECTION...........
+
+// SEARCH BAR
+// const searchBar = document.querySelector('.search');
+// const page = document.querySelector('section')
+
+// const searchBarClicked = ()=>{
+//   const input = document.createElement('input');
+//   input.classList.add('quick-nav')
+//   document.querySelector('.search').replaceWith(input);
+//   page.style.opacity = '0';
+
+//   console.log('search now')
+// }
+
+// searchBar.addEventListener('click', ()=>{
+//   searchBarClicked();
+// })
+
+
 
 
 // ADD TO CART SECTION ROOM INSPIRATION SECTION
