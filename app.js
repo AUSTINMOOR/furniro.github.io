@@ -66,8 +66,8 @@ document.addEventListener('scroll', ()=>{
 const activateScroll = ()=>{
   const imageList = document.querySelector('.image-list');
   const nextPrevButtons = document.querySelectorAll('.scroll-btn');
-
   const radioButtons = document.querySelectorAll('#radio-btn');
+
 
   // get next and prev buttons 
   nextPrevButtons.forEach((button)=>{
@@ -77,6 +77,21 @@ const imageDirection = buttonDirection* imageList.clientWidth;
 imageList.scrollBy({left: imageDirection, behavior: 'smooth'});
 })
 })
+
+
+// 
+const maximumScroll = imageList.scrollWidth * imageList.scrollLeft;
+
+const checkScroll = ()=>{
+  nextPrevButtons[0].style.display = imageList.scrollLeft <= 0 ? 'none' : 'block';
+  nextPrevButtons[1].style.display = maximumScroll > 0 ? 'none' : 'block';
+
+}
+
+imageList.addEventListener('scroll', ()=>{
+  checkScroll();
+})
+
 // front and back buttons ended
 
 radioButtons.forEach((button)=>{

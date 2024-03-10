@@ -577,7 +577,10 @@ box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
 
 .scroll-container #next-btn{
   right: 10px;
+  display: none;
  }
+
+
 
 .scroll-container #next-btn i{
   animation: arrowPush 1s ease 1s infinite;
@@ -627,6 +630,7 @@ z-index: 1;
   height: 400px;
   z-index: 1;
   transition: .5s;
+  transition-delay: .3s;
 
 }
 
@@ -676,27 +680,34 @@ z-index: 3;
 background: #ffffffb0;
 padding: 35px;
 left: 5%;
+cursor: pointer;
+
 } 
 
 
 .inner-content small{
   color: #555;
-  margin-top: 5px;
+  /* margin-top: 5px; */
+  padding: 5px;
 }
 
  
 
 
 .inner-button{
-  width: 50px;
+  width: 40px;
   background: var(--dark-gold);
   border: none;
   padding: 10px;
   cursor: pointer;
-
-transform: translate(90px , 35px);
-
+color: var(--primary-bg);
+transform: translate(110px , 35px);
+font-size: var(--font-medium);
 } 
+.inner-button:hover{
+  background: var(--primary-bg);
+  color: var(--dark-gold);
+}
 
 
 /* FURNIRO FIRNITURES  */
@@ -1085,8 +1096,11 @@ width: clamp(20px,15vw,200px);
     
     } 
 
-
-
+/* footer */
+.footer-section input{
+width: 180px;
+  padding-left: 10px;
+}
 
 }
 
@@ -1132,7 +1146,12 @@ width: clamp(20px,15vw,200px);
    }
 
 
-
+.main-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;  
+}
 
   /* HEADER SECTION FOR MOBILE */
   header{
@@ -1143,11 +1162,10 @@ width: clamp(20px,15vw,200px);
     align-items: center;
     text-align: center;
     margin: 20vh auto 0 auto;
-    left: 15%;
-    margin-top: 12rem;
     z-index: 2;
     box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
   }
+  /* javascript toggle */
   header.active{
     display: flex;
   }
@@ -1235,6 +1253,7 @@ display: none;
 /* OUR PRODUCTS */
 .products .row {
   flex-direction: row;
+  
 }
 .card{
   width: 150px;
@@ -1378,8 +1397,8 @@ height: 450px;
   }
 
   .hero-cta{
-    width: 420px;
-    height: 450px;
+    width: 300px;
+    min-height: 450px;
       
     }
     
@@ -1451,6 +1470,7 @@ height: 450px;
   .products .row{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .card{
@@ -1500,6 +1520,7 @@ height: 450px;
   .beautiful-rooms-inspiration{
     background: var(--secondary-bg2);
     width: 100%;
+    /* display: none; */
   }
 
 
