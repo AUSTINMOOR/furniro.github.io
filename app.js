@@ -33,21 +33,44 @@ document.addEventListener('scroll', ()=>{
 // QUICK NAV SECTION...........
 
 // SEARCH BAR
-// const searchBar = document.querySelector('.search');
-// const page = document.querySelector('section')
+const searchBar = document.querySelector('.search');
+const searchModal = document.querySelector('.search-modal')
 
-// const searchBarClicked = ()=>{
-//   const input = document.createElement('input');
-//   input.classList.add('quick-nav')
-//   document.querySelector('.search').replaceWith(input);
-//   page.style.opacity = '0';
+const searchBarClicked = ()=>{
+searchModal.style.display = 'block';
+}
+searchBar.addEventListener('click', searchBarClicked)
 
-//   console.log('search now')
-// }
 
-// searchBar.addEventListener('click', ()=>{
-//   searchBarClicked();
-// })
+
+// END OF SEARCH MODAL
+
+const form = document.getElementById('my-form');
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+})
+
+const inputFocused = ()=>{
+  
+  const searchBar = document.getElementById('search-box').value.toUpperCase();
+  const products = document.querySelectorAll('.card');
+  const productsName = document.getElementsByTagName('h4');
+
+  for(let i = 0; i < productsName.length; i++){
+let match = products[i].getElementsByTagName('h4')[0];
+if(match){
+let textValue = match.textContent || match.innerHTML;
+if(textValue.toUpperCase().indexOf(searchBar) > -1){
+  products[i].style.display = '';
+}else{
+  products[i].style.display = 'none';
+}
+}
+  }
+}
+
+
+
 
 
 

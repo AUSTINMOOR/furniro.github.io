@@ -203,7 +203,6 @@ transform: translateX(-15px);
 
 
 .quick-nav .bx{
- 
   font-size: 1.4rem;
 cursor: pointer;
 transition: all .5s;
@@ -221,6 +220,48 @@ transition: all .5s;
   transform: scale(.5);
 }
 
+/* Search Bar Functionality */
+.search-modal{
+  width: 350px;
+  height: 100vh;
+  position: absolute;
+  background: var(--primary-bg);
+  right: 0%;
+  top: 90px;
+  overflow-y: scroll;
+  display: none;
+
+}
+
+
+.search-modal form{
+  display: flex;
+  justify-content: center;
+}
+.search-modal input{
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 10px;
+  position: fixed;
+  display: flex;
+  text-align: center;
+}
+
+.search-product{
+  margin-top: 100px;
+  
+}
+
+.search-product .card{
+  width: 100px;
+  background: none;
+  margin: 80px;
+}
+.search-product .card img{
+  width: 50px;
+  height: 40px;
+}
 /* END OH HEADER SECTION */
 
 /* HERO SECTION */
