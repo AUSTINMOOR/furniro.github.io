@@ -57,6 +57,10 @@ background: var(--primary-bg);
 width: 100%;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 h1,h2{
   font-family: Ubuntu,sans-serif;
   font-size: var(--font-big);
@@ -65,6 +69,9 @@ h1,h2{
 p{
   color: #9F9F9F;
 }
+
+
+
 
 /* END OF GENERAL STYLES */
 
@@ -221,33 +228,91 @@ transition: all .5s;
 }
 
 /* Search Bar Functionality */
+.modal-layer{
+width: 100%;
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+z-index: 6;
+background: rgba(0,0,0,0.2);
+display: none;
+}
+
+@keyframes modal{
+  from{transform: translateX(300px);}
+  to{transform: translateX(0px);}
+}
 .search-modal{
   width: 350px;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background: var(--primary-bg);
   right: 0%;
   top: 90px;
   overflow-y: scroll;
   display: none;
+transition: .3s ease;
+z-index: 7;
+animation: modal .5s ease;
+}
 
+.search-modal .card{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.search-count{
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-medium);
+  color: var(--text-color);
 }
 
 
+
+#close-search{
+  background-color: var(--black);
+  color: var(--primary-bg);
+  margin: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+  
+}
+#close-search .bx{
+font-size: 1.1rem;
+transform: rotate(0deg);
+transition: all .4s;
+}
+#close-search:hover .bx{
+  transform: rotate(1060deg);
+  cursor: pointer;
+}
 .search-modal form{
   display: flex;
   justify-content: center;
 }
 .search-modal input{
   width: 300px;
-  padding: 8px;
+  padding: 10px;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 40px;
   position: fixed;
   display: flex;
   text-align: center;
+  border: none;
+  background-color: rgba(0,0,0,0.1);
 }
-
+.search-modal input:focus{
+  outline: 1px solid var(--dark-gold);
+}
 .search-product{
   margin-top: 100px;
   
@@ -257,6 +322,7 @@ transition: all .5s;
   width: 100px;
   background: none;
   margin: 80px;
+  display: none;
 }
 .search-product .card img{
   width: 50px;
@@ -290,7 +356,7 @@ border-radius: 5px;
 background: var(--secondary-bg2);
 padding: 20px;
 
-box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.027);
 
 
 }
@@ -497,7 +563,8 @@ display: flex;
   padding: 12px;
   width: 220px;
   cursor: pointer;
-box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.027);
+
 
 }
 
@@ -559,7 +626,8 @@ padding: 12px;
 border: none;
 margin: 10px;
 transition: .4s ease;
-box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.027);
+
 
 }
 
@@ -597,7 +665,8 @@ position: relative;
   cursor: pointer;
  transition: all .4s;
  z-index: 4;
-box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+ box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.027);
+
 
 }
 
@@ -618,11 +687,13 @@ box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
 
 .scroll-container #prev-btn{
   left: 10px;
+
+  display: none;
+
  }
 
 .scroll-container #next-btn{
   right: 10px;
-  display: none;
  }
 
 
@@ -706,7 +777,7 @@ z-index: 3;
 
 
 .image-content img:hover{
-  width: 350px;
+  width: 335px;
   height: 475px;
   
   

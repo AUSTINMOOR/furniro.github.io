@@ -17,15 +17,11 @@ closedBtn.addEventListener('click',toggleMenu);
 // scroll section 
 document.addEventListener('scroll', ()=>{
   if(scrollY > 600){
-    menu.style.backdropFilter = 'blur(10px)';
-    menu.style.background = 'transparent';
+    menu.style.backdropFilter = 'blur(20px)';
     menu.style.boxShadow = '10px 10px 30px rgba(0,0,0,0.2)';    
   }   else{
-
     menu.style.background ='white'
     menu.style.boxShadow = 'none'
-
-
   }
 })
 
@@ -35,15 +31,27 @@ document.addEventListener('scroll', ()=>{
 // SEARCH BAR
 const searchBar = document.querySelector('.search');
 const searchModal = document.querySelector('.search-modal')
-
+const closeSearchModal = document.querySelector('#close-search');
 const searchBarClicked = ()=>{
 searchModal.style.display = 'block';
+document.querySelector('.modal-layer').style.display ='block'
 }
 searchBar.addEventListener('click', searchBarClicked)
 
+// close search bar
 
+const searchModalClosed = ()=>{
+  searchModal.style.display = 'none';
+document.querySelector('.modal-layer').style.display ='none';
+  console.log(searchModal);
+}
+closeSearchModal.addEventListener('click', searchModalClosed);
 
 // END OF SEARCH MODAL
+
+
+
+// search input
 
 const form = document.getElementById('my-form');
 form.addEventListener('submit', (e)=>{
@@ -61,9 +69,10 @@ let match = products[i].getElementsByTagName('h4')[0];
 if(match){
 let textValue = match.textContent || match.innerHTML;
 if(textValue.toUpperCase().indexOf(searchBar) > -1){
-  products[i].style.display = '';
+  products[i].style.display = 'block';
+  document.querySelector('.search-count').style.display = 'none'
 }else{
-  products[i].style.display = 'none';
+products[i].style.display = 'none';
 }
 }
   }
