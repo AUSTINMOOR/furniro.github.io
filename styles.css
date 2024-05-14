@@ -162,6 +162,27 @@ header{
 
 }
 
+.modal-layer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 6;
+  background: rgba(0,0,0,0.3);
+  display: none;
+  }
+  
+
+
+
+@keyframes modal{
+  from{transform: translateX(300px);}
+  to{transform: translateX(0px);}
+}
+
 
 .head-content .quick-nav ul{
   display: flex;
@@ -227,108 +248,12 @@ transition: all .5s;
   transform: scale(.5);
 }
 
-/* Search Bar Functionality */
-.modal-layer{
-width: 100%;
-height: 100%;
-position: fixed;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-z-index: 6;
-background: rgba(0,0,0,0.2);
-display: none;
-}
-
-@keyframes modal{
-  from{transform: translateX(300px);}
-  to{transform: translateX(0px);}
-}
-.search-modal{
-  width: 350px;
-  height: 100vh;
-  position: fixed;
-  background: var(--primary-bg);
-  right: 0%;
-  top: 90px;
-  overflow-y: scroll;
-  display: none;
-transition: .3s ease;
-z-index: 7;
-animation: modal .5s ease;
-}
-
-.search-modal .card{
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-text-align: center;
-}
-.search-count{
-  display: flex;
-  justify-content: center;
-  font-size: var(--font-medium);
-  color: var(--text-color);
-}
 
 
 
-#close-search{
-  background-color: var(--black);
-  color: var(--primary-bg);
-  margin: 10px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: none;
-  position: fixed;
-  
-}
-#close-search .bx{
-font-size: 1.1rem;
-transform: rotate(0deg);
-transition: all .4s;
-}
-#close-search:hover .bx{
-  transform: rotate(1060deg);
-  cursor: pointer;
-}
-.search-modal form{
-  display: flex;
-  justify-content: center;
-}
-.search-modal input{
-  width: 300px;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 40px;
-  position: fixed;
-  display: flex;
-  text-align: center;
-  border: none;
-  background-color: rgba(0,0,0,0.1);
-}
-.search-modal input:focus{
-  outline: 1px solid var(--dark-gold);
-}
-.search-product{
-  margin-top: 100px;
-  
-}
 
-.search-product .card{
-  width: 100px;
-  background: none;
-  margin: 80px;
-  display: none;
-}
-.search-product .card img{
-  width: 50px;
-  height: 40px;
-}
-/* END OH HEADER SECTION */
+
+
 
 /* HERO SECTION */
 .hero{
@@ -448,33 +373,39 @@ transform: scale(.98);
   text-align: center;
   margin: 30px;
 }
+
+/* Card */
 .card{
   width: 280px;
   height: 400px;
   background: var(--card-bg);
-
-
-  
 }
 .card img{
   width: 280px;
   height: 300px;
 }
 
-
 /* CARD HOVER */
+/* We set the card hover position to absolute and the overflow to hidden cuz we dont't want other card hovers to start displaying everywhere in our window....we also set the card hover size to be as the same as the card size.*/
+
+
+/* we set the card hover to display none, height 0px, width 0 */
 .card-hover{
   background: rgba(0,0,0,0.6);
-  width: 0px;
   height: 400px;
+  width: 0px;
   position: absolute;
   overflow: hidden;
   transition: all .4s;
-}
-.card:hover .card-hover{
-  width: 280px;
-  opacity: 1;
 
+}
+
+
+
+
+.card:hover .card-hover{
+  opacity: 1;
+width: 280px;
 }
 
 
@@ -1009,7 +940,7 @@ align-items: start;
 
 
 
-/*  */
+
 /* TABLET PHONES */
 
  @media (max-width: 1400px){
@@ -1021,7 +952,8 @@ align-items: start;
 
 
 
-  /*  */
+  /*Beatiful inspiration  */
+
   .beautiful-rooms-inspiration{
   
 display: flex;
@@ -1101,7 +1033,7 @@ width: clamp(20px,15vw,200px);
 
 /* logo */
 .container .logo{
-  top: 2%;
+  top: 3.5%;
 }
 
 /* product */
@@ -1270,6 +1202,10 @@ width: 180px;
 }
 
   /* HEADER SECTION FOR MOBILE */
+  .modal-layer.active{
+    display: block;
+  }
+
   header{
     height: 325px;
     width: 325px;
@@ -1278,9 +1214,17 @@ width: 180px;
     align-items: center;
     text-align: center;
     margin: 20vh auto 0 auto;
-    z-index: 2;
+    z-index: 7;
     box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
   }
+
+.menu-btn{
+  z-index: 7;
+}
+
+#close{
+color: #fff;
+}
   /* javascript toggle */
   header.active{
     display: flex;

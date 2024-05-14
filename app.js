@@ -1,17 +1,34 @@
-const menuButton = document.querySelector('.menu-btn #open');
+const menuButton = document.querySelector('#open');
+// const menuContainer = document.querySelector('.menu-container');
+const modalLayer = document.querySelector('.modal-layer');
 const menu = document.querySelector('header');
 const closedBtn = document.querySelector('#close')
 const header = document.querySelector('header')
 
 
 const toggleMenu = ()=>{
-
-  menu.classList.toggle('active')
-  menuButton.classList.toggle('active')
-  closedBtn.classList.toggle('active')
+  if(menu.classList.contains('active')){
+    menu.classList.remove('active');
+    menuButton.classList.remove('active')
+    modalLayer.classList.remove('active');
+    closedBtn.classList.remove('active')
+  }else{
+    menu.classList.add('active')
+    menuButton.classList.add('active')
+    modalLayer.classList.add('active')
+    closedBtn.classList.add('active')
+  }
 }
 menuButton.addEventListener('click', toggleMenu);
-closedBtn.addEventListener('click',toggleMenu);
+closedBtn.addEventListener('click', toggleMenu);
+
+
+
+
+
+
+
+
 
 
 // scroll section 
@@ -29,23 +46,14 @@ document.addEventListener('scroll', ()=>{
 // QUICK NAV SECTION...........
 
 // SEARCH BAR
-const searchBar = document.querySelector('.search');
-const searchModal = document.querySelector('.search-modal')
-const closeSearchModal = document.querySelector('#close-search');
-const searchBarClicked = ()=>{
-searchModal.style.display = 'block';
-document.querySelector('.modal-layer').style.display ='block'
-}
-searchBar.addEventListener('click', searchBarClicked)
+// const searchBar = document.querySelector('.search');
+// const searchModal = document.querySelector('.search-modal')
+// const closeSearchModal = document.querySelector('#close-search');
+
 
 // close search bar
 
-const searchModalClosed = ()=>{
-  searchModal.style.display = 'none';
-document.querySelector('.modal-layer').style.display ='none';
-  console.log(searchModal);
-}
-closeSearchModal.addEventListener('click', searchModalClosed);
+
 
 // END OF SEARCH MODAL
 
@@ -53,30 +61,30 @@ closeSearchModal.addEventListener('click', searchModalClosed);
 
 // search input
 
-const form = document.getElementById('my-form');
-form.addEventListener('submit', (e)=>{
-  e.preventDefault();
-})
+// const form = document.getElementById('my-form');
+// form.addEventListener('submit', (e)=>{
+//   e.preventDefault();
+// })
 
-const inputFocused = ()=>{
+// const inputFocused = ()=>{
   
-  const searchBar = document.getElementById('search-box').value.toUpperCase();
-  const products = document.querySelectorAll('.card');
-  const productsName = document.getElementsByTagName('h4');
+//   const searchBar = document.getElementById('search-box').value.toUpperCase();
+//   const products = document.querySelectorAll('.card');
+//   const productsName = document.getElementsByTagName('h4');
 
-  for(let i = 0; i < productsName.length; i++){
-let match = products[i].getElementsByTagName('h4')[0];
-if(match){
-let textValue = match.textContent || match.innerHTML;
-if(textValue.toUpperCase().indexOf(searchBar) > -1){
-  products[i].style.display = 'block';
-  document.querySelector('.search-count').style.display = 'none'
-}else{
-products[i].style.display = 'none';
-}
-}
-  }
-}
+//   for(let i = 0; i < productsName.length; i++){
+// let match = products[i].getElementsByTagName('h4')[0];
+// if(match){
+// let textValue = match.textContent || match.innerHTML;
+// if(textValue.toUpperCase().indexOf(searchBar) > -1){
+//   products[i].style.display = 'block';
+//   document.querySelector('.search-count').style.display = 'none'
+// }else{
+// products[i].style.display = 'none';
+// }
+// }
+//   }
+// }
 
 
 
