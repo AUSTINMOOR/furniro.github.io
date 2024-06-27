@@ -5,7 +5,7 @@
 
 :root{
   --black: #000;
-  --primary-bg: #fff;
+  --primary-bg: #fafafa;
   --secondary-bg: #f9f1e7;
   --secondary-bg2: #fff3e3;
   --click-bg: #f5f5f5;
@@ -386,7 +386,7 @@ transform: scale(.98);
 }
 
 /* CARD HOVER */
-/* We set the card hover position to absolute and the overflow to hidden cuz we dont't want other card hovers to start displaying everywhere in our window....we also set the card hover size to be as the same as the card size.*/
+
 
 
 /* we set the card hover to display none, height 0px, width 0 */

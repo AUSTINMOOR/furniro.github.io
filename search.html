@@ -7,8 +7,66 @@
     <link rel="stylesheet" href="search.css" />
   </head>
   <body>
-    <h1>search</h1>
+    <div class="container">
+      <div class="main-header">
+        <div class="modal-layer"></div>
+        <header>
+          <nav>
+            <div class="head-content">
+              <div class="nav-links">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#product">Shop</a></li>
+                  <li><a href="">About</a></li>
+                  <li><a href="">Contact</a></li>
+                </ul>
+              </div>
+              <div class="quick-nav">
+                <ul>
+                  <li><i class="bx bx-user-check"></i></li>
 
+                  <li><i class="bx bx-heart"></i></li>
+                  <li><i class="bx bx-cart-alt"></i></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+      </div>
+
+      <div class="menu-btn">
+        <i class="bx bx-menu" id="open"></i>
+        <i class="bx bx-x" id="close"></i>
+      </div>
+
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="Meubel House_Logos-05.png"
+            alt="this is the logo for my website"
+          />
+          <h1><b>Furniro</b></h1>
+        </a>
+      </div>
+      <div class="form-container">
+        <form class="form">
+          <div class="item">
+            <input type="text" name="search" placeholder="Search Products" />
+          </div>
+          <div class="item submit">
+            <button type="submit" title="search">Search</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- main -->
+      <div class="app">
+        <div class="product-length">
+          <span>Found only <b class="count">5</b> products</span>
+        </div>
+        <div class="contain"></div>
+      </div>
+    </div>
     <script src="search.js"></script>
   </body>
 </html>

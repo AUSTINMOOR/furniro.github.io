@@ -1,5 +1,5 @@
 const menuButton = document.querySelector('#open');
-// const menuContainer = document.querySelector('.menu-container');
+
 const modalLayer = document.querySelector('.modal-layer');
 const menu = document.querySelector('header');
 const closedBtn = document.querySelector('#close')
